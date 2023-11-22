@@ -1,1 +1,20 @@
-<div class="sc-jlZhew cMVzTi">Você pode ajudar via Pix usando a chave:</div></div><div class="sc-dAlyuH sCraS"><span title="" class="" data-clipboard-text="4236980@vakinha.com.br"><div class="sc-fscmHZ gSLUOh"><div><span class="sc-jlZhew hEntdS"><strong>4236980@vakinha.com.br</strong></span></div><div class="sc-dAlyuH ctvdsb"><svg class="sc-hknOHE gmLDwR" viewBox="350 0 766 758" width="25" height="25"><title>Copiar link</title><path class="cls-2" d="M806.32,188.44H597.7a34.87,34.87,0,0,0-34.84,34.73V466.71H597.7V223.17H806.32Z"></path><path class="cls-2" d="M858.56,258v0H667.25a35,35,0,0,0-34.84,34.83V536.28a35,35,0,0,0,34.84,34.83H858.56a34.9,34.9,0,0,0,34.72-34.83V292.8A34.9,34.9,0,0,0,858.56,258Zm0,278.29H667.25V292.8H858.56Z"></path></svg></div></div></span></div></div></div>
+RL url = null;
+File file = new File("C:\\Backup\\page.html");
+BufferedWriter outFile = new BufferedWriter(new FileWriter(file));
+def x = 1;
+url = new URL("http://site");
+
+BufferedReader inFile = new BufferedReader(new InputStreamReader(url.openStream()));
+String inputLine;
+
+while ((inputLine = inFile.readLine()) != null) {
+    logger.info(inputLine.toString())
+    outFile.write(inputLine);
+    outFile.newLine();
+}
+logger.info("RAMO: "+x.toString())
+x++
+
+inFile.close();
+outFile.flush();
+outFile.close();
