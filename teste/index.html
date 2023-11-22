@@ -1,10 +1,48 @@
-
+html
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript - Copy to Clipboard</title>
- 
-<div class="sc-jOnpCo cHwUHW"><div class="sc-bkEOxz hCYONq"><div class="sc-cWSHoV bJWizd"><div class="sc-bpUBKd czErSq">Você pode ajudar via Pix usando a chave:</div></div><div class="sc-cWSHoV lnWInd"><span title="" class="" data-clipboard-text="4236980@vakinha.com.br"><div class="sc-dhFUGM ktXaAt"><div><span class="sc-bpUBKd ewfOfq"><strong>4236980@vakinha.com.br</strong></span></div><div class="sc-cWSHoV faBVlw"><svg class="sc-fvtFIe cgreqs" viewBox="350 0 766 758" width="25" height="25"><title>Copiar link</title><path class="cls-2" d="M806.32,188.44H597.7a34.87,34.87,0,0,0-34.84,34.73V466.71H597.7V223.17H806.32Z"></path><path class="cls-2" d="M858.56,258v0H667.25a35,35,0,0,0-34.84,34.83V536.28a35,35,0,0,0,34.84,34.83H858.56a34.9,34.9,0,0,0,34.72-34.83V292.8A34.9,34.9,0,0,0,858.56,258Zm0,278.29H667.25V292.8H858.56Z"></path></svg></div></div></span></div></div></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .copy-btn svg {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="textToCopy" value="Texto para copiar" readonly>
+        <div class="copy-btn" onclick="copyToClipboard()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15L9 15"></path>
+                <path d="M5 9L9 9"></path>
+                <path d="M15 15L19 15"></path>
+                <path d="M15 9L19 9"></path>
+                <path d="M9 15L9 9"></path>
+                <path d="M15 15L15 9"></path>
+                <path d="M9 3L9 5"></path>
+                <path d="M15 3L15 5"></path>
+                <path d="M9 3L15 3"></path>
+            </svg>
+            Copiar
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("textToCopy");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+            document.execCommand("copy");
+            alert("Texto copiado para a área de transferência!");
+        }
+    </script>
+</body>
+</html>
