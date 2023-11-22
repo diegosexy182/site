@@ -1,20 +1,23 @@
-RL url = null;
-File file = new File("C:\\Backup\\page.html");
-BufferedWriter outFile = new BufferedWriter(new FileWriter(file));
-def x = 1;
-url = new URL("http://site");
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
 
-BufferedReader inFile = new BufferedReader(new InputStreamReader(url.openStream()));
-String inputLine;
+  <input id="text" />
 
-while ((inputLine = inFile.readLine()) != null) {
-    logger.info(inputLine.toString())
-    outFile.write(inputLine);
-    outFile.newLine();
-}
-logger.info("RAMO: "+x.toString())
-x++
+  <button id="copy">Copy</button>
 
-inFile.close();
-outFile.flush();
-outFile.close();
+  <script type="text/javascript">
+    const textInput = document.getElementById('text');
+    const copyButton = document.getElementById('copy');
+
+    copyButton.addEventListener('click', ()=> {
+      textInput.select();
+      document.execCommand('copy');
+    });
+  </script>
+
+</body>
+</html>
