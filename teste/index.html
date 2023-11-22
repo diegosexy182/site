@@ -1,48 +1,13 @@
-html
-<!DOCTYPE html>
-<html>
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        .copy-btn {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        
-        .copy-btn svg {
-            margin-right: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        <input type="text" id="textToCopy" value="Texto para copiar" readonly>
-        <div class="copy-btn" onclick="copyToClipboard()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15L9 15"></path>
-                <path d="M5 9L9 9"></path>
-                <path d="M15 15L19 15"></path>
-                <path d="M15 9L19 9"></path>
-                <path d="M9 15L9 9"></path>
-                <path d="M15 15L15 9"></path>
-                <path d="M9 3L9 5"></path>
-                <path d="M15 3L15 5"></path>
-                <path d="M9 3L15 3"></path>
-            </svg>
-            Copiar
-        </div>
-    </div>
+<div class="container">
+	<div class="label">
+		E-mail address
+	</div>
+	<div class="copy-text">
+		<input type="text" class="text" value="david@stylus.co.za" />
+		<button><i class="fa fa-clone"></i></button>
+	</div>
+</div>
 
-    <script>
-        function copyToClipboard() {
-            var copyText = document.getElementById("textToCopy");
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-            document.execCommand("copy");
-            alert("Texto copiado para a área de transferência!");
-        }
-    </script>
-</body>
-</html>
+<footer>
+	<p>Credit: <a href="https://www.youtube.com/watch?v=9-vBx7F0lns" target="_blank">https://www.youtube.com/watch?v=9-vBx7F0lns</a></p>
+</footer>
